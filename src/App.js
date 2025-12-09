@@ -17,6 +17,7 @@ function App() {
 
   const [text, setText] = useState("");
   const [wordIndex, setWordIndex] = useState(0);
+  const [charIndex, setCharIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
 
 
