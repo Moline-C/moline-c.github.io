@@ -17,8 +17,9 @@ function App() {
 
   const [text, setText] = useState("");
   const [wordIndex, setWordIndex] = useState(0);
-  const [charIndx, setCharIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
+
+
 
   useEffect(() => {
     const currentWord = words[wordIndex];
