@@ -10,7 +10,7 @@ import { useState, useEffect } from 'react';
 function App() {
   const words = [
     "is an Engineer",
-    "is a Creaetor",
+    "is a Creator",
     "is a Visionary",
     "is an Innovator",
   ];
@@ -32,7 +32,7 @@ function App() {
         setCharIndex(charIndex + 1);
       // if word is complete, pause, then delete
         if (charIndex + 1 === currentWord.length) {
-          setTimeout(() => setIsDeleting(true), 800);
+          setTimeout(() => setIsDeleting(true), 2000);
         }
       } 
 
@@ -48,7 +48,7 @@ function App() {
           setWordIndex((wordIndex + 1) % words.length);
         }
       }
-    }, isDeleting ? 60 : 100); // delete faster than typing
+    }, isDeleting ? 40 : 100); // delete faster than typing
 
     return () => clearTimeout(timeout);
   }, [charIndex, isDeleting, wordIndex, words]);
@@ -57,11 +57,13 @@ function App() {
   return (
     <div className="App">
       <nav className="navbar">
-        <h1 className = "logo">Moline Charles</h1>
+        <h1 className = "logo">MC</h1>
         <ul className = "nav-links">
           <li><a href="#about">About</a></li>
           <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
           <li><a href="#leadership">Leadership</a></li>
+
         </ul>
         </nav>
         
