@@ -103,7 +103,7 @@ function App() {
               <div className = "card">
                 <div className = "card-header">
                   <img 
-                  src="/company-logo.jpg"
+                  src="/company-logo.png"
                   alt = "Moe's Chiropractic and & Rehab Center"
                   className = "card-logo"
                   />
@@ -125,19 +125,105 @@ function App() {
 
 
         <section className="section projects" id="projects">
-          <div className = "section-content">
+          <div className="section-content">
             <h2>Featured Projects</h2>
-              <div className="card">Project1</div>
-              <div className = "card">Project 2</div>
+
+            <div className="project-card">
+              <img src="/blackjack-preview.png" alt="Blackjack Game" className="project-image" />
+              <div className="project-text">
+                <h3 className="project-title">Blackjack Game</h3>
+                <p className="project-description">
+                  Built a functional Blackjack game featuring card animations, sound effects, and keyboard-driven user input. Implemented game logic including random card draws, Ace handling, dealer AI, and win/loss conditions with real-time stat tracking. Designed a responsive GUI with custom card assets and score display to support 50+ rounds of interactive gameplay.
+                </p>
+                <div className="project-badges">
+                  <span className="badge python">Python</span>
+                  <span className="badge pygame">Pygame</span>
+                </div>
+                <a href="https://github.com/Moline-C/blackjack" className="project-button" target="_blank" rel="noopener noreferrer">
+                  <img src="/external-link.png" className="project-btn-icon" />
+                  View Project
+                </a>
+              </div>
+            </div>
+
+            <div className="project-card">
+              <img src="/nutritrack-preview.png" alt="NutriTrack" className="project-image" />
+              <div className="project-text">
+                <h3 className="project-title">NutriTrack</h3>
+                <p className="project-description">
+                 Developed a Flask-based nutrition tracker at a 24-hour hackathon, processing user input to deliver personalized macro insights. Designed a responsive HTML/CSS interface that improved data readability and reduced user input friction by ~40% during testing.
+                </p>
+                <div className="project-badges">
+                  <span className="badge html">HTML</span>
+                  <span className="badge css">CSS</span>
+                  <span className="badge flask">Flask</span>
+                  <span className="badge python-light">Python</span>
+                </div>
+                <a href="https://github.com/Moline-C/NutriTrack" className="project-button" target="_blank" rel="noopener noreferrer">
+                  <img src="/external-link.png" className="project-btn-icon" />
+                  View Project
+                </a>
+              </div>
+            </div>
+
           </div>
-         
         </section>
+
+
+
 
         <section className = "section leadership" id = "leadership">
           <div className="section-content">
             <h2>Leadership & Involvement</h2>
             <div className = "card-container">
-              <div className = "card"> Leadership 1 </div>
+              <div className = "card">
+                <div className = "card-header">
+                  <img 
+                  src="/nsbe-logo.png" 
+                  alt="NSBE Trailblazers Initiative" 
+                  className = "card-logo"
+                  />
+                  <div className = "card-title-info">
+                    <h3 className="job-title">Trailblazers Cohort Member</h3>
+                    <p className = "company-name">National Society of Black Engineers</p>
+                  </div>
+                </div>
+
+                <p className = "date-box">September 2025 - Present </p>
+
+                <p className = "job-description">
+                Organized and participated in academic and social development activities, fostering peer support, accountability, and cross-disciplinary collaboration among 30+ students. Developed professional and leadership skills through structured mentorship, workshops, and networking events with industry professionals and alumni. Represent the chapter at general body meetings and regional conferences, building connections and maintaining relationships with 200+ peers and 30+ partner student organizations.
+                </p>
+
+              </div>
+
+              <div className = "card">
+                <div className = "card-header">
+                  <img
+                  src = "/colorstack-logo.png"
+                  alt = "colorstack"
+                  className="card-logo"
+                  />
+
+                  <div className = "card-title-info">
+                    <h3 className = "job-title">General Body Member</h3>
+                    <p className = "company-name">ColorStack</p>
+                  </div>
+                </div>
+                <p className="date-box">September 2025 - Present</p>
+
+                <p className = "job-description">
+                  Attended 10+ technical workshops covering data structures, resume 
+                  optimization, and frontend development with HTML/CSS and JavaScript. 
+                  Engaged with a growing network of 100+ peers and professionals through 
+                  mentorship, office hours, and virtual meetups with recruiters from 
+                  leading tech companies to strengthen technical skills and industry 
+                  exposure.
+                </p>
+              </div>
+
+
+
             </div>
           </div>
         </section>
