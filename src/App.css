@@ -16,7 +16,7 @@ body {
   z-index: 1000;
   backdrop-filter: blur(3px);
   transition: backdrop-filter 0.3s, background 0.3s;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1)
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .logo {
@@ -27,14 +27,14 @@ body {
 }
 
 .nav-links {
-  list-style:none;
+  list-style: none;
   display: flex;
   gap: 50px;
   margin: 0;
   padding: 0;
   position: absolute;
   left: 50%;
-  transform: translateX(-50%)
+  transform: translateX(-50%);
 }
 
 .nav-links a {
@@ -95,7 +95,7 @@ body {
   font-weight: 300;
   font-size: 18px;
   cursor: pointer;
-  transform: transform 0.2s, box-shadow 0.3s;
+  transition: transform 0.2s, box-shadow 0.3s;
 }
 
 .btn:hover {
@@ -126,22 +126,34 @@ body {
 .btn.linkedin:hover {
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
+
 .typing {
-  color: #007bff;
   font-weight: 600;
   font-size: 60px;
+  background: linear-gradient(90deg, #007bff, #00c6ff, #ff00ff);
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   border-right: 3px solid #007bff;
   padding-right: 5px;
-  animation: blink 0.7s infinite;
+
+  animation: gradientShift 5s linear infinite, blink 0.7s step-end infinite;
 }
 
 @keyframes blink {
-  0% {border-color: transparent;}
+  0%, 100% {border-color: transparent;}
   50% {border-color: #007bff;}
-  100% {border-color: transparent;}
 }
 
-.section{
+@keyframes gradientShift {
+  0% {background-position: 0% 0%;}
+  50% {background-position: 100% 0%}
+  100% {background-position: 0% 0%}
+}
+
+
+
+.section {
   padding: 60px 20px;
 }
 
@@ -160,20 +172,19 @@ body {
 
 .section.about {
   background: #ffffff;
-  color:black;
+  color: black;
 }
 
 .section.experience {
   background: #fafafa;
   color: black;
-  padding-top: 30px
+  padding-top: 30px;
 }
 
 .section.projects {
   background: #ffffff;
   color: black;
 }
-
 
 /* Project card */
 .project-card {
@@ -193,7 +204,6 @@ body {
   box-shadow: 0px 8px 20px rgba(80, 106, 135, 0.3);
 }
 
-
 .project-image {
   width: 100%;
   height: auto;
@@ -202,7 +212,6 @@ body {
   border-bottom: 1px solid #e0e0e0;
   background: #f9f9f9;
 }
-
 
 .project-text {
   padding: 20px 30px 30px 30px;
@@ -221,7 +230,6 @@ body {
   margin-bottom: 12px;
 }
 
-
 .project-badges {
   display: flex;
   flex-wrap: wrap;
@@ -238,13 +246,29 @@ body {
   font-weight: 500;
 }
 
-.python { background: #ff4d4d; }      
-.pygame { background: #3399ff; }      
-.html { background: #3399ff; }  
-.css { background: #ff4d4d; }         
-.flask { background: #28a745; }      
-.python-light { background: #66b3ff; }  
+.python {
+  background: #ff4d4d;
+}
 
+.pygame {
+  background: #3399ff;
+}
+
+.html {
+  background: #3399ff;
+}
+
+.css {
+  background: #ff4d4d;
+}
+
+.flask {
+  background: #28a745;
+}
+
+.python-light {
+  background: #66b3ff;
+}
 
 .project-button {
   display: inline-flex;
@@ -269,15 +293,10 @@ body {
   height: 16px;
 }
 
-
-
-
-
 .section.leadership {
   background: #fafafa;
   color: black;
 }
-
 
 .section h2 {
   font-size: 45px;
@@ -285,7 +304,6 @@ body {
   font-weight: 700;
   color: #000000;
 }
-
 
 .section p {
   font-size: 18px;
@@ -303,7 +321,7 @@ body {
   text-align: center;
 }
 
-.card{
+.card {
   background: #ffffff;
   padding: 30px;
   border-radius: 10px;
@@ -331,18 +349,17 @@ body {
 .card-logo {
   width: 40px;
   height: 40px;
-  border-radius: 50%;
-  flex-shrink: 0;       
-  object-fit: contain;   
-  border-radius: 8px;    
-  background: #fff;  
+  border-radius: 8px;
+  flex-shrink: 0;
+  object-fit: contain;
+  background: #fff;
 }
 
 .card-title-info {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;   
-  align-items: flex-start;      
+  justify-content: flex-start;
+  align-items: flex-start;
   text-align: left;
   gap: 10px;
 }
@@ -358,7 +375,6 @@ body {
   color: #6b6b6b !important;
   margin: 4px 0 10px 0 !important;
   font-weight: 500;
-
 }
 
 .card .date-box {
@@ -370,8 +386,6 @@ body {
   margin-bottom: 12px;
   color: #555;
   text-align: left;
-
-
 }
 
 .job-description {
@@ -389,6 +403,7 @@ body {
   gap: 20px;
   padding-top: 20px;
 }
+
 footer {
   background: #ffffff;
   color: black;
@@ -398,16 +413,14 @@ footer {
 }
 
 @media (max-width: 600px) {
-  .display-title .name, 
+  .display-title .name,
   .typing {
     font-size: 32px;
   }
-
   .nav-links {
     gap: 10px;
   }
-
-  .nav-links a{
+  .nav-links a {
     font-size: 16px;
   }
 }
