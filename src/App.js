@@ -42,6 +42,20 @@ function App() {
     return () => clearTimeout(timeout);
   }, [charIndex, isDeleting, wordIndex, words]);
 
+  // Progression within NSBE (LinkedIn-style compact timeline, nested in the card)
+  const nsbeJourney = [
+    {
+      date: "Sep 2025 - April 2026",
+      title: "Trailblazers Cohort Member",
+      current: false,
+    },
+    {
+      date: "May 2026 - Present",
+      title: "Technical Software Director, Executive Board",
+      current: true,
+    },
+  ];
+
   return (
     <div className="App">
       {/* Navbar */}
@@ -62,8 +76,8 @@ function App() {
           <span className="typing">{text}</span>
         </h1>
         <p className="description">
-          Computer Science Student • Full-Stack Developer <br />
-          • AI Enthusiast • Future Tech Leader
+          Computer Engineering Student • RTL &amp; FPGA Design <br />
+          • Full-Stack Developer • AI Enthusiast
         </p>
         <div className="top-buttons">
           <a
@@ -90,18 +104,20 @@ function App() {
         <div className="section-content">
           <h2>About Me</h2>
           <p>
-            I am Moline Charles, a Computer Science Major at the University of Florida with a deep
-            passion for software engineering, web development, and game development. I am excited
-            about the potential development of these fields through the use of AI and related
-            technologies. As an active member of National Society of Black Engineers (NSBE) and
-            Colorstack, I am proud to be a part of communities that emphasize diversity,
-            empowerment, and excellence in tech. In addition to my academic pursuits, I am always
-            looking for opportunities to grow as a developer, and I am committed to using my skills
-            to make a positive impact. Whether it is through collaboration or involvement in
-            community-driven projects, I am passionate about giving back and supporting others on
-            their journey. I am always enthusiastic about connecting with individuals, organizations,
-            and innovators who are dedicated to advancing technology in ways that promote equity and
-            create meaningful impact.
+            I am Moline Charles, a Computer Engineering major at the University of Florida with a
+            passion for hardware design, full-stack software development, and the intersection of
+            AI with both. I currently work as a Quality Control, Hardware &amp; Software Engineer
+            at SpinCore Technologies, where I test and validate FPGA-based systems while building
+            internal tooling that blends embedded systems with modern software. As Technical
+            Software Director on the Executive Board of the National Society of Black Engineers
+            (NSBE), and a General Body Member of ColorStack, I am proud to be part of communities
+            that emphasize diversity, empowerment, and excellence in tech. I am always looking for
+            opportunities to grow as an engineer, and I am committed to using my skills — from RTL
+            design to full-stack development — to make a positive impact. Whether it is through
+            collaboration or involvement in community-driven projects, I am passionate about giving
+            back and supporting others on their journey. I am always enthusiastic about connecting
+            with individuals, organizations, and innovators who are dedicated to advancing
+            technology in ways that promote equity and create meaningful impact.
           </p>
         </div>
       </section>
@@ -114,13 +130,38 @@ function App() {
             <div className="card">
               <div className="card-header">
                 <img
+                  src="/spincore-logo.png"
+                  alt="SpinCore Technologies"
+                  className="card-logo"
+                />
+                <div className="card-title-info">
+                  <h3 className="job-title">Quality Control, Hardware &amp; Software Engineer</h3>
+                  <p className="company-name">SpinCore Technologies</p>
+                </div>
+              </div>
+              <p className="date-box">February 2026 - Present</p>
+              <p className="job-description">
+                Perform quality control and functional testing on 10+ FPGA-based pulse generation
+                boards, diagnosing hardware and software issues at the board level to ensure
+                reliability and specification compliance. Configure and validate digital timing and
+                control systems using C/C++ for TTL pulse and pattern generation across multiple
+                board configurations. Develop internal tooling and automation, including an
+                LLM-powered system to surface relevant responses from historical customer emails,
+                reducing manual support lookup time. Improve and maintain company web presence as
+                part of independent technical project work.
+              </p>
+            </div>
+
+            <div className="card">
+              <div className="card-header">
+                <img
                   src="/company-logo.png"
                   alt="Moe's Chiropractic and & Rehab Center"
                   className="card-logo"
                 />
                 <div className="card-title-info">
-                  <h3 className="job-title">Web Developer</h3>
-                  <p className="company-name">Moe's Chiropractic & Rehab Center</p>
+                  <h3 className="job-title">Freelance Web Developer</h3>
+                  <p className="company-name">Moe's Chiropractic &amp; Rehab Center</p>
                 </div>
               </div>
               <p className="date-box">November 2024 - December 2024</p>
@@ -131,7 +172,7 @@ function App() {
                 experiences. Integrated third-party booking and contact form applications to
                 streamline scheduling, reducing manual administrative work by 60%. Collaborated
                 closely with a five-person office team to refine content and optimize user flow,
-                strengthening the clinic’s overall digital presence and engagement.
+                strengthening the clinic's overall digital presence and engagement.
               </p>
             </div>
           </div>
@@ -144,54 +185,84 @@ function App() {
           <h2>Featured Projects</h2>
 
           <div className="project-card">
-            <img src="/blackjack-preview.png" alt="Blackjack Game" className="project-image" />
+            <img src="/axi4-preview.png" alt="AXI4-Lite Crossbar Interconnect" className="project-image" />
             <div className="project-text">
-              <h3 className="project-title">Blackjack Game</h3>
+              <h3 className="project-title">AXI4-Lite Crossbar Interconnect</h3>
               <p className="project-description">
-                Built a functional Blackjack game featuring card animations, sound effects, and
-                keyboard-driven user input. Implemented game logic including random card draws, Ace
-                handling, dealer AI, and win/loss conditions with real-time stat tracking. Designed
-                a responsive GUI with custom card assets and score display to support 50+ rounds of
-                interactive gameplay.
+                Designed a parameterizable N-initiator M-target AXI4-Lite crossbar in SystemVerilog
+                with address-based target routing, round-robin arbitration with a zero-deadlock
+                guarantee, and full 5-channel handshake compliance. Authored 11 SystemVerilog
+                Assertions across the arbiter, target, and crossbar modules, and built a layered UVM
+                testbench with a randomized sequence, driver, monitor, and scoreboard. Synthesized
+                and validated on a DE10-Lite FPGA, confirming end-to-end AXI read/write data flow on
+                real silicon.
               </p>
               <div className="project-badges">
-                <span className="badge python">Python</span>
-                <span className="badge pygame">Pygame</span>
+                <span className="badge systemverilog">SystemVerilog</span>
+                <span className="badge modelsim">ModelSim</span>
+                <span className="badge uvm">UVM</span>
+                <span className="badge quartus">Quartus</span>
               </div>
               <a
-                href="https://github.com/Moline-C/blackjack"
+                href="https://github.com/Moline-C"
                 className="project-button"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img src="/external-link.png" className="project-btn-icon" /> View Project
+                <img src="/external-link.png" className="project-btn-icon" alt="" /> View Project
               </a>
             </div>
           </div>
 
           <div className="project-card">
-            <img src="/nutritrack-preview.png" alt="NutriTrack" className="project-image" />
+            <img src="/face-recognition-preview.png" alt="AI Face Recognition App" className="project-image" />
             <div className="project-text">
-              <h3 className="project-title">NutriTrack</h3>
+              <h3 className="project-title">AI Face Recognition App</h3>
               <p className="project-description">
-                Developed a Flask-based nutrition tracker at a 24-hour hackathon, processing user
-                input to deliver personalized macro insights. Designed a responsive HTML/CSS
-                interface that improved data readability and reduced user input friction by ~40%
-                during testing.
+                Built a real-time face recognition application using OpenCV for image processing,
+                MediaPipe for 478-point landmark extraction, and dlib embeddings for accurate face
+                identification. Designed a modular architecture with a Qt6 GUI and a filesystem-based
+                image storage layer with JSON indexing, and implemented Euclidean distance similarity
+                search across stored 128-D embeddings for accurate face detection.
               </p>
               <div className="project-badges">
-                <span className="badge html">HTML</span>
-                <span className="badge css">CSS</span>
-                <span className="badge flask">Flask</span>
-                <span className="badge python-light">Python</span>
+                <span className="badge python">Python</span>
+                <span className="badge qt">Qt</span>
+                <span className="badge opencv">OpenCV</span>
+                <span className="badge mediapipe">MediaPipe</span>
+                <span className="badge dlib">Dlib</span>
               </div>
               <a
-                href="https://github.com/Moline-C/NutriTrack"
+                href="https://github.com/Moline-C"
                 className="project-button"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img src="/external-link.png" className="project-btn-icon" /> View Project
+                <img src="/external-link.png" className="project-btn-icon" alt="" /> View Project
+              </a>
+            </div>
+          </div>
+
+          <div className="project-card">
+            <img src="/nsbe-gator-preview.png" alt="NSBE Gator App" className="project-image" />
+            <div className="project-text">
+              <h3 className="project-title">NSBE Gator App</h3>
+              <p className="project-description">
+                Contributed to a team-built mobile application using React Native with a
+                Firebase/Firestore backend. Collaborated in a 10-person software team using GitHub
+                for version control, code reviews, and feature integration.
+              </p>
+              <div className="project-badges">
+                <span className="badge reactnative">React Native</span>
+                <span className="badge firebase">Firebase</span>
+              </div>
+              <a
+                href="https://github.com/Moline-C"
+                className="project-button"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src="/external-link.png" className="project-btn-icon" alt="" /> View Project
               </a>
             </div>
           </div>
@@ -201,36 +272,49 @@ function App() {
       {/* Leadership Section */}
       <section className="section leadership" id="leadership">
         <div className="section-content">
-          <h2>Leadership & Involvement</h2>
+          <h2>Leadership &amp; Involvement</h2>
           <div className="card-container">
             <div className="card">
               <div className="card-header">
                 <img
                   src="/nsbe-logo.png"
-                  alt="NSBE Trailblazers Initiative"
+                  alt="National Society of Black Engineers"
                   className="card-logo"
                 />
                 <div className="card-title-info">
-                  <h3 className="job-title">Trailblazers Cohort Member</h3>
+                  <h3 className="job-title">Technical Software Director, Executive Board</h3>
                   <p className="company-name">National Society of Black Engineers</p>
                 </div>
               </div>
-              <p className="date-box">September 2025 - Present</p>
+              <p className="date-box">May 2026 - Present</p>
               <p className="job-description">
-                Organized and participated in academic and social development activities, fostering
-                peer support, accountability, and cross-disciplinary collaboration among 30+ students.
-                Developed professional and leadership skills through structured mentorship, workshops,
-                and networking events with industry professionals and alumni. Represent the chapter at
-                general body meetings and regional conferences, building connections and maintaining
-                relationships with 200+ peers and 30+ partner student organizations.
+                Lead a team of 10+ student developers in designing and maintaining chapter software
+                projects. Coordinate technical workshops, coding initiatives, and project development
+                efforts for chapter members. Collaborate with chapter leadership and 30+ student
+                organizations to support technical and professional programming.
               </p>
+
+              <div className="mini-timeline">
+                {nsbeJourney.map((item, index) => (
+                  <div
+                    className={`mini-timeline-item${item.current ? " current" : ""}`}
+                    key={index}
+                  >
+                    <span className="mini-timeline-dot" />
+                    <div className="mini-timeline-text">
+                      <span className="mini-timeline-title">{item.title}</span>
+                      <span className="mini-timeline-date">{item.date}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
 
             <div className="card">
               <div className="card-header">
                 <img src="/colorstack-logo.png" alt="ColorStack" className="card-logo" />
                 <div className="card-title-info">
-                  <h3 className="job-title">General Body Member</h3>
+                  <h3 className="job-title">National Member</h3>
                   <p className="company-name">ColorStack</p>
                 </div>
               </div>
@@ -243,11 +327,29 @@ function App() {
                 industry exposure.
               </p>
             </div>
+
+            <div className="card">
+              <div className="card-header">
+                <img src="/naacp-logo.png" alt="NAACP Gator Chapter" className="card-logo" />
+                <div className="card-title-info">
+                  <h3 className="job-title">Executive Assistant to the Internal Vice President</h3>
+                  <p className="company-name">NAACP, Gator Chapter</p>
+                </div>
+              </div>
+              <p className="date-box">2026 - Present</p>
+              <p className="job-description">
+                Serve as a point of contact for the Programming, Community Service, and Black Hair
+                Expo committee chairs, supporting the Internal Vice President across chapter
+                initiatives. Attend all Executive Board, Committee Chair, and General Body meetings,
+                reorganizing meeting notes into clear summaries for the broader membership. Maintain
+                the organization's calendar and help coordinate announcements to keep members
+                informed and engaged.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Footer */}
       <footer>
         <p>© {new Date().getFullYear()} Moline Charles</p>
       </footer>
