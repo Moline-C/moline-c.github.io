@@ -112,8 +112,8 @@ function App() {
             Software Director on the Executive Board of the National Society of Black Engineers
             (NSBE), and a General Body Member of ColorStack, I am proud to be part of communities
             that emphasize diversity, empowerment, and excellence in tech. I am always looking for
-            opportunities to grow as an engineer, and I am committed to using my skills — from RTL
-            design to full-stack development — to make a positive impact. Whether it is through
+            opportunities to grow as an engineer, and I am committed to using my skills, from RTL
+            design to full-stack development, to make a positive impact. Whether it is through
             collaboration or involvement in community-driven projects, I am passionate about giving
             back and supporting others on their journey. I am always enthusiastic about connecting
             with individuals, organizations, and innovators who are dedicated to advancing
