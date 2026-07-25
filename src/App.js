@@ -110,7 +110,7 @@ function App() {
             at SpinCore Technologies, where I test and validate FPGA-based systems while building
             internal tooling that blends embedded systems with modern software. As Technical
             Software Director on the Executive Board of the National Society of Black Engineers
-            (NSBE), and a General Body Member of ColorStack, I am proud to be part of communities
+            (NSBE), and a National Member of ColorStack, I am proud to be part of communities
             that emphasize diversity, empowerment, and excellence in tech. I am always looking for
             opportunities to grow as an engineer, and I am committed to using my skills, from RTL
             design to full-stack development, to make a positive impact. Whether it is through
